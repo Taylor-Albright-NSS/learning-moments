@@ -1,16 +1,10 @@
 
-export const Post = ({post}) => {
+export const Post = ({title}) => {
     return (
         <div className="post">
-            <h1 className='post-title'>
-                {post.title}
-            </h1>
-            <p className='post-body'>
-                {post.body}
-            </p>
-            <footer className='post-date'>
-                {post.date}
-            </footer>
+            <h1 className='post-title'>{title.title}</h1>
+            <p className='post-topic'>Topic: {title.topic.name}</p>
+            <footer className='post-date'>Likes {title.likes.length}</footer>
         </div>
     )
 }

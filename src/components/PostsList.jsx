@@ -1,21 +1,41 @@
 import { useState, useEffect } from "react"
-import { getPosts } from "../services/postServices"
 import { Post } from "./Post"
+import { getPosts } from "../services/postServices"
+import { TopicSearch } from "./TopicSearch"
+
 
 export const PostsList = () => {
+    const [shownPosts, setShownPosts] = useState([])
     const [allPosts, setAllPosts] = useState([])
-
+    const [filteredPosts, setFilteredPosts] = useState([])
+    
     useEffect(() => {
         getPosts().then(postsArray => {
             setAllPosts(postsArray)
         })
     }, [])
 
+    useEffect(() => {
+        if (filteredPosts[0]) {
+            setShownPosts(filteredPosts)
+        } else {
+            getPosts().then(postsArray => {
+                setShownPosts(postsArray)
+            })        
+        }
+    }, [filteredPosts])
+
+
     return (
-        <div className="post-list">
-            {allPosts.map(post => {
-                return <Post post={post} key={post.id}/>
-            })}
+        <div className='post-view'>
+            <div className="post-list">
+                {shownPosts.map(post => {
+                    return <Post title={post} key={post.id}/>
+                })}
+            </div>
+            <div className="topic-search">
+                <TopicSearch allPosts={allPosts} setFilteredPosts={setFilteredPosts} />
+            </div>
         </div>
     )
 }
