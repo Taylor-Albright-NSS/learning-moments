@@ -1,16 +1,26 @@
+import { Link } from "react-router-dom"
 
-
-export const NavBar = ({allPosts, showAllPosts}) => {
+export const NavBar = () => {
     return (
-        <div className='nav-bar'>
-            <ul className='nav-ul'>
-                <li className='nav-li' onClick={() => {showAllPosts(allPosts)}}>All Posts</li>
-                <li className='nav-li'>My Posts</li>
-                <li className='nav-li'>Favorites</li>
-                <li className='nav-li'>New Post</li>
-                <li className='nav-li'>User Profile</li>
-                <li className='nav-li'>Logout</li>
+            <ul className='navbar'>
+                <li className='navbar-item'>
+                    <Link to="/allposts" className='navbar-link'>All Posts</Link>
+                </li>
+                <li className='navbar-item'>
+                    <Link to="/allposts" className='navbar-link'>My Posts</Link>
+                </li>
+                <li className='navbar-item'>
+                    <Link to="/allposts" className='navbar-link'>Favorites</Link>
+                </li>
+                <li className='navbar-item'>
+                    <Link to="/allposts" className='navbar-link'>New Post</Link>
+                </li>
+                <li className='navbar-item'>
+                    <Link to="/allposts" className='navbar-link'>User Profile</Link>
+                </li>
+                <li className='navbar-item'>
+                    <Link to="/allposts" className='navbar-link'>Logout</Link>
+                </li>
             </ul>
-        </div>
     )
 }

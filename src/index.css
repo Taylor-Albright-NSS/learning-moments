@@ -35,11 +35,13 @@ table {
 
 .app {
   display:flex;
+  flex-direction: column;
 }
 
 .post-view {
   display: flex;
   width: 1400px;
+  min-height: 800px; 
   border: 2px solid red;
 }
 
@@ -96,34 +98,33 @@ table {
   align-self: center;
 }
 
-.nav-bar {
-  position: fixed; /* Fixes the navbar in place */
-  max-height: 16px;
-  top: 0; /* Sticks the navbar to the top */
-  width: 1800px; /* Navbar spans the full width of the page */
-  background-color: #333; /* Dark background for contrast */
-  color: white; /* White text */
-  padding: 1rem; /* Adds padding inside the navbar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Small shadow for depth */
-  z-index: 1000; /* Ensures the navbar stays above other content */
-}
-
-.nav-ul {
-  list-style: none; /* Remove bullet points */
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: var(--dark);
   margin: 0;
-  padding: 0;
-  display: flex; /* Horizontal layout for nav items */
-  justify-content: center; /* Center the nav items */
+  width: 100%;
+  padding: 0.5rem;
 }
 
-.nav-li {
-  margin: 0 1.0rem; /* Adds space between nav items */
-  width: 200px;
+.navbar-item {
   border: 2px solid green;
-  border-radius: 6px;
-  font-size: 20px;
+  flex-basis: 12.48%;
+  list-style-type: none;
   text-align: center;
+  color: var(--offWhite);
 }
-.nav-li:hover {
-  cursor: pointer;
+
+.navbar-link {
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 1px;
+}
+
+.navbar-logout {
+  margin-left: auto;
+}
+
+.navbar-link:hover {
+  color: var(--primary);
 }
