@@ -1,20 +1,24 @@
 import { PostsList } from "./components/PostsList"
 import { Routes, Route, Outlet } from "react-router-dom"
 import { NavBar } from "./components/NavBar"
+import { Login } from "./components/auth/Login"
+import {Register} from "./components/auth/Register"
+import { Authorized } from "./views/Authorized"
+import { ApplicationViews } from "./views/ApplicationViews"
 
 
 export const App = () => {
   return (
-    <Routes className="app">
-        <Route path="/" element={
-          <>
-            <NavBar />
-            <Outlet />
-          </>
-          } 
-          />
-        <Route path='/allposts' element={<PostsList/>} />
+<>
+    <Routes>
+      <Route path='/login' element={<Login />} />
+      <Route path='/register' element={<Register />} />
+      <Route path="*" element={
+        <Authorized>
+          <ApplicationViews />
+        </Authorized>
+      } />
     </Routes>
-
+</>
   )
 }

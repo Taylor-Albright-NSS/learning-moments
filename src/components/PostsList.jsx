@@ -3,6 +3,7 @@ import { Post } from "./Post"
 import { getPosts } from "../services/postServices"
 import { TopicSearch } from "./TopicSearch"
 import { NavBar } from "./NavBar"
+import { Link } from "react-router-dom"
 
 export const PostsList = () => {
     const [shownPosts, setShownPosts] = useState([])
@@ -28,11 +29,10 @@ export const PostsList = () => {
 
     return (
         <>
-        <NavBar allPosts={allPosts} showAllPosts={setShownPosts}/>
         <div className='post-view'>
             <div className="post-list">
                 {shownPosts.map(post => {
-                    return <Post title={post} key={post.id}/>
+                    return <Link to ={`/posts/${post.id}`}><Post post={post} key={post.id}/></Link>
                 })}
             </div>
             <div className="topic-search">

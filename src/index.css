@@ -75,6 +75,21 @@ table {
   transition: transform 0.1s ease; /* Smooth hover effect */
 }
 
+.post-details {
+  max-width: 400px;
+  flex-grow: 1;
+  background-color: rgb(170, 170, 170); /* Card background */
+  border-radius: 10px; /* Rounded corners */
+  border: 8px solid rgb(66, 66, 66);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a floating effect */
+  padding: 1rem; /* Padding inside the card */
+  display: flex; /* Flexbox for content alignment */
+  margin: 0.5rem;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-evenly; /* Space between content */
+  transition: transform 0.1s ease; /* Smooth hover effect */
+}
+
 .post:hover {
   background: rgb(117, 162, 140)
 
