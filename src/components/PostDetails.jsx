@@ -11,17 +11,23 @@ export const PostDetails = ({ currentUser }) => {
     const navigate = useNavigate()
 
     const handleLikes = (event) => {
+        console.log(currentPost)
+        if (currentPost.likes.find(like => like.userId === currentUser.id)) {
+            window.alert('You have already liked this post!')
+            return
+        }
         event.preventDefault()
         const like = {
             userId: currentUser.id,
             postId: currentPost.id
         }
-        
+
         updateLikes(like).then(() => {
             getPostDetails(postId).then(post => {
                 setCurrentPost(post[0])
             })        
         })
+        navigate(`/favorites`)
     }
 
     const editPost = () => {

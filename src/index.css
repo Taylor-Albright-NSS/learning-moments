@@ -115,6 +115,7 @@ table {
 
 .navbar {
   display: flex;
+  justify-content: center;
   flex-wrap: nowrap;
   background-color: var(--dark);
   margin: 0;
@@ -142,4 +143,27 @@ table {
 
 .navbar-link:hover {
   color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", serif;
+}
+
+/* This prevents all the links in the app from having default underline */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* This prevents all the links in the app from turning purple after visiting */
+a:visited {
+  color: inherit;
+}
+/* This prevents all the inputs in the app from having that blue outline when in focus */
+input:focus {
+  outline: none;
 }
