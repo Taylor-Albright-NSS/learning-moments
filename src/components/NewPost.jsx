@@ -30,8 +30,7 @@ export const NewPost = ({ currentUser }) => {
         console.log(newPost)
         e.preventDefault()
         if (newPost.topicId === 0 || isNaN(newPost.topicId)) {
-            console.log(newPost)
-            console.log(newPost.topicId)
+
             window.alert('Please select a topic before saving your post.')
             return
         }

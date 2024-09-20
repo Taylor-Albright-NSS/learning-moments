@@ -32,9 +32,9 @@ export const MyPosts = ({ currentUser }) => {
 
     return (
         <div>
-            {userPosts ? userPosts.map(post => {
+            {userPosts && userPosts.map(post => {
                 return <MyPost post={post} refreshPosts={refreshPosts} key={post.id}/>
-            }) : ''}
+            })}
         </div>
     )
 }
