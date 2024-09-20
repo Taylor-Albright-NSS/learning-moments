@@ -22,7 +22,7 @@ export const NavBar = () => {
                     <Link to="/posts" className='navbar-link'>User Profile</Link>
                 </li> */}
                 {localStorage.getItem("learning_user") ? (
-                    <li>
+                    <li className='navbar-item'>
                         <Link
                         to=""
                         onClick={() => {

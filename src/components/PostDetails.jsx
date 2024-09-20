@@ -43,21 +43,23 @@ export const PostDetails = ({ currentUser }) => {
 
 
     return (
-        <div className='post-details'>
-            <h2>{ currentPost ? currentPost.title : ''}</h2>
-            <h3>{ currentPost ? currentPost.topic?.name : ''}</h3>
-            <h3>{ currentPost ? currentPost.date : ''}</h3>
-            <p>{ currentPost ? currentPost.body : ''}</p>
-            <h3>By: { currentPost ? currentPost.user?.name : ''}</h3>
+        <div className='post-details-main'>
+            <div className='single-post'>
+                <h2 className='post-info'>{ currentPost ? currentPost.title : ''}</h2>
+                <h3 className='post-info'>{ currentPost ? currentPost.topic?.name : ''}</h3>
+                <h3 className='post-info'>{ currentPost ? currentPost.date : ''}</h3>
+                <p>{ currentPost ? currentPost.body : ''}</p>
+                <h3 className='post-info'>By: { currentPost ? currentPost.user?.name : ''}</h3>
 
-            <span>Likes: { currentPost ? currentPost.likes?.length : ''}</span>
-            {currentUser.id === currentPost.userId ?
-            //TODO
-            //Edit your post button should navigate to the Edit Post view once the
-            //Edit Post view is created
-            <button onClick={() => editPost(currentPost)}>Edit your post</button> :
-            <button onClick={handleLikes}>Like this post!</button>
-             }
+                <span>Likes: { currentPost ? currentPost.likes?.length : ''}</span>
+                {currentUser.id === currentPost.userId ?
+                //TODO
+                //Edit your post button should navigate to the Edit Post view once the
+                //Edit Post view is created
+                <button className='btn-primary' onClick={() => editPost(currentPost)}>Edit your post</button> :
+                <button className='btn-secondary' onClick={handleLikes}>Like this post!</button>
+                }
+            </div>
         </div>
     )
 }

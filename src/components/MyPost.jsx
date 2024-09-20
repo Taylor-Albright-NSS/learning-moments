@@ -14,10 +14,10 @@ const handleDeletePost = (post, refreshPosts) => {
 export const MyPost = ({post, refreshPosts}) => {
     return (
         <div className="post">
-            <Link to={`/posts/${post.id}`}><h1 className='post-title'>{post.title}</h1></Link>
+            <Link to={`/posts/${post.id}`}><h1 className='post-info'>{post.title}</h1></Link>
             {/* <p className='post-topic'>Topic: {post.topic.name}</p>
             <footer className='post-date'>Likes {post.likes.length}</footer> */}
-            <button onClick={() => handleDeletePost(post, refreshPosts)}>Delete Post</button>
+            <button className='btn-warning' onClick={() => handleDeletePost(post, refreshPosts)}>Delete Post</button>
         </div>
     )
 }

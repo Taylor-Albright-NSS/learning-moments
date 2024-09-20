@@ -34,7 +34,7 @@ export const EditPost = ({ currentUser }) => {
 
 
     return (
-        <div className='post-details'>
+        <div className='edit-details-main'>
             <form>
             <fieldset>
                 <div className='form-group'>
@@ -75,11 +75,12 @@ export const EditPost = ({ currentUser }) => {
 
                     }} />
                 </div>
+                <span>Likes: { currentPost ? currentPost.likes?.length : ''}</span>
+                <button className='btn-secondary save-edits-button' onClick={handleSaveEdits}>Save Edits</button>
+
             </fieldset>
-            <button onClick={handleSaveEdits}>Save Edits</button>
             </form>
             
-            <span>Likes: { currentPost ? currentPost.likes?.length : ''}</span>
         </div>
     )
 }

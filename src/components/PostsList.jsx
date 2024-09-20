@@ -29,7 +29,6 @@ export const PostsList = () => {
 
     return (
         <>
-        <div className='post-view'>
             <div className="post-list">
                 {shownPosts.map(post => {
                     return <Link to ={`/posts/${post.id}`}><Post post={post} key={post.id}/></Link>
@@ -38,7 +37,6 @@ export const PostsList = () => {
             <div className="topic-search">
                 <TopicSearch allPosts={allPosts} setFilteredPosts={setFilteredPosts} />
             </div>
-        </div>
         </>
     )
 }

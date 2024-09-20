@@ -31,7 +31,7 @@ export const MyPosts = ({ currentUser }) => {
     console.log(allPosts)
 
     return (
-        <div>
+        <div className='my-posts'>
             {userPosts && userPosts.map(post => {
                 return <MyPost post={post} refreshPosts={refreshPosts} key={post.id}/>
             })}
