@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import '../index.css'
 
-export const NavBar = () => {
+export const NavBar = ({ currentUser }) => {
     const navigate = useNavigate()
     return (
             <ul className='navbar'>
@@ -18,9 +18,9 @@ export const NavBar = () => {
                 <li className='navbar-item'>
                     <Link to="/newpost" className='navbar-link'>New Post</Link>
                 </li>
-                {/* <li className='navbar-item'>
-                    <Link to="/posts" className='navbar-link'>User Profile</Link>
-                </li> */}
+                <li className='navbar-item'>
+                    <Link to={`/profile/${currentUser.id}`} className='navbar-link'>Profile</Link>
+                </li>
                 {localStorage.getItem("learning_user") ? (
                     <li className='navbar-item'>
                         <Link

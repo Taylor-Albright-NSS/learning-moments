@@ -70,6 +70,7 @@ button {
 /* These are all the color options for the buttons */
 /* If you change the color variables, be sure to change the hover colors to be a darker shade of the colors you chose*/
 .btn-primary {
+  margin: 1rem;
   background-color: var(--primary);
 }
 
@@ -78,6 +79,7 @@ button {
 }
 
 .btn-secondary {
+  margin: 1rem;
   background-color: var(--secondary);
 }
 
@@ -86,6 +88,7 @@ button {
 }
 
 .btn-warning {
+  margin: 1rem;
   background-color: var(--warning);
 }
 
@@ -153,7 +156,8 @@ button {
   align-items: center;
 }
 
-.single-post {
+.single-post,
+.profile {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
@@ -176,14 +180,16 @@ button {
 }
 
 .post-list,
-.my-posts {
+.my-posts,
+.favorites {
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
 }
 
 .post-details-main,
-.edit-details-main {
+.edit-details-main,
+.profile-details-main {
   width: 600px;
   margin-top: 10rem;
   margin-left: 40rem;

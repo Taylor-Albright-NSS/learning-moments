@@ -34,12 +34,12 @@ export const Favorites = ({ currentUser }) => {
     }
 
     return (
-        <div>
+        <div className='favorites'>
             {shownPosts && shownPosts.map(post => {
                 return (
-                <div key={post.id}>
+                <div key={post.id} className='post'>
                     <Link to={`/posts/${post.id}`}> <h2>{post ? post.post.title : 'why nothing?'}</h2> </Link>
-                    <button onClick={() => handleUnlike(post.postId)}>Remove Favorite</button>
+                    <button className='btn-warning' onClick={() => handleUnlike(post.postId)}>Remove Favorite</button>
                 </div>
                 )
             })}

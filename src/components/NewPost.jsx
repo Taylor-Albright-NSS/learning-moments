@@ -74,7 +74,7 @@ export const NewPost = ({ currentUser }) => {
                     }}></textarea>
                 </div>
                 <div className='form-group'>
-                    <button>Save Post</button>
+                    <button className='btn-secondary'>Save Post</button>
                 </div>
             </fieldset>
         </form>
